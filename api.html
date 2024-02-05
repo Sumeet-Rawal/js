@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        td {
+border: 1px solid black;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="conainr"></div> -->
+    <table>
+      <tbody id="tbody"></tbody>
+    </table>
+    <button onclick=apihandle()> click </button>
+    <script>
+      let array = [];
+      let wholedata = "";
+      let table = document.getElementById("tbody");
+      async function apihandle() {
+        let response = await fetch("https://jsonplaceholder.typicode.com/posts")
+        let result = await response.json();
+        console.log(result)
+            array = result;
+            console.log(array.length)
+            // console.log(array)          
+            for(let i =0; i<=array.length ; i++)
+            {
+              wholedata +=`<tr>
+                <td>${array[i].id}</td>
+                <td>${array[i].body}</td>
+         </tr> `  
+            } 
+            // console.log(wholedata)
+           table.innerHTML =  wholedata;
+          };
+    </script>
+  </body>
+</html>

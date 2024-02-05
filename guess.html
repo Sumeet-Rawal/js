@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>guess number</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- <style>
+      body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        width: 80vw;
+        border: 0.5px solid;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0)
+        );
+      }
+
+      .innerbox {
+        height: 70%;
+        width: 50%;
+        border: 2px solid;
+      }
+
+      h2 {
+        position: relative;
+        left: 90px;
+        font-size: 2rem;
+        line-height: 40px;
+      }
+
+      #ch {
+        position: relative;
+        left: 190px;
+        top: 20px;
+      }
+
+      #one {
+        position: relative;
+        top: 90px;
+        left: 20px;
+        height: 35px;
+        width: 80px;
+        background-color: green;
+        color: white;
+      }
+
+      input {
+        position: relative;
+        top: 20px;
+        left: 200px;
+        height: 35px;
+        width: 280px;
+        font-size: 1rem;
+      }
+    </style> -->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row  h-50  bg-danger">
+        <div class="col-md-10 col-lg-10 col-sm-10 p-5 bg-success ">
+          <h1 class=""> 
+            Guess The Number
+          </h1>
+          <div class="box">
+            <div class="innerbox">
+              <h2><u>Write any Number between 1 - 50</u></h2>
+              
+                <h2 id="ch">enter any number</h2>
+    
+              <input type="text" id="input" placeholder="Enter your Number" />
+              <button id="one" onclick="sumeet1()">OK</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      let number = Math.floor(Math.random() * 51);
+      console.log(number);
+      function sumeet1() {
+        let inputno = document.getElementById("input").value;
+        console.log(number);
+        console.log(inputno);
+        if (inputno < number) {
+          document.getElementById("ch").innerHTML = "your Number is smaller ";
+        } else if (inputno > number) {
+          document.getElementById("ch").innerHTML = "your Number is bigger ";
+        } else if (inputno == number) {
+          document.getElementById("ch").innerHTML = "Congrats you got number";
+        } else {
+          document.getElementById("ch").innerHTML = "plz enter number";
+        }
+      }
+    </script>
+  </body>
+</html>

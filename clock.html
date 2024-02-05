@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content: center;
+        }
+        p{
+            color: white;
+            font-size: 100px;
+        }
+        button{
+            width: 250px;
+            height: 50px;
+            background-color: red;
+            border-radius: 10px;
+            color: white;
+            font-size: 30px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+      
+    <p id="iden"></p>
+    <button onclick="clearInterval(clock)">STOP</button>
+
+
+    <script>
+        let clock = setInterval(clocktiming,1000)
+        function clocktiming(){
+    let d = new Date();
+    let sumeet = d.toLocaleTimeString();
+    document.getElementById("iden").innerHTML = sumeet;
+}
+   
+        
+    </script>
+</body>
+</html>
